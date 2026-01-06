@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Resources Hub</title>
+    <title>Study Resources - Math & Physics</title>
     <style>
         * {
             margin: 0;
@@ -12,162 +12,145 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
             min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+        .header {
+            background: white;
             padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
             text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        h1 {
-            color: #667eea;
+        .header h1 {
+            color: #2c3e50;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
 
-        .subtitle {
-            color: #666;
-            font-size: 1.2em;
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
         }
 
-        .subjects-grid {
+        .content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-bottom: 30px;
         }
 
-        .subject-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
+        .subject-box {
+            background: white;
+            border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
 
-        .subject-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        .subject-box:hover {
+            transform: translateY(-10px);
         }
 
-        .subject-icon {
+        .subject-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4facfe;
+        }
+
+        .icon {
             font-size: 3em;
-            margin-bottom: 15px;
+            margin-right: 15px;
         }
 
-        .subject-title {
-            color: #333;
+        .subject-header h2 {
+            color: #2c3e50;
             font-size: 1.8em;
-            margin-bottom: 20px;
         }
 
-        .resources-list {
+        .file-list {
             list-style: none;
         }
 
-        .resource-item {
-            background: #f8f9fa;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s ease;
+        .file-item {
+            margin-bottom: 15px;
         }
 
-        .resource-item:hover {
-            background: #e9ecef;
-        }
-
-        .resource-name {
-            font-weight: 500;
-            color: #333;
-        }
-
-        .resource-type {
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-        }
-
-        .download-btn {
+        .file-link {
+            display: block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: transform 0.2s ease;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
         }
 
-        .download-btn:hover {
+        .file-link:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .file-link:active {
+            transform: scale(0.98);
         }
 
         .instructions {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
+            background: white;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .instructions h2 {
-            color: #667eea;
+        .instructions h3 {
+            color: #2c3e50;
             margin-bottom: 20px;
+            font-size: 1.5em;
         }
 
-        .step {
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #34495e;
+        }
+
+        .code-box {
             background: #f8f9fa;
             padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4facfe;
+            overflow-x: auto;
         }
 
-        .step-number {
-            background: #667eea;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-            padding: 20px;
+        .code-box code {
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
         }
 
         @media (max-width: 768px) {
-            h1 {
+            .header h1 {
                 font-size: 2em;
             }
             
-            .subjects-grid {
+            .content {
                 grid-template-columns: 1fr;
             }
         }
@@ -175,109 +158,140 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>📚 Academic Resources Hub</h1>
-            <p class="subtitle">Free Math & Physics Study Materials</p>
-        </header>
+        <div class="header">
+            <h1>📚 Academic Resources</h1>
+            <p>Free Study Materials for Math & Physics</p>
+        </div>
 
-        <div class="subjects-grid">
-            <!-- Mathematics Section -->
-            <div class="subject-card">
-                <div class="subject-icon">📐</div>
-                <h2 class="subject-title">Mathematics</h2>
-                <ul class="resources-list" id="math-resources">
-                <li class="resource-item">
-                    <a href="DL.pdf" download style="text-decoration: none; color: inherit; display: flex; justify-content: space-between; width: 100%;">
-                        <span class="resource-name">Sample Exam 2024</span>
-                        <span class="resource-type">PDF</span>
-                   </a>
-                </li>
-                    <li class="resource-item">
-                        <span class="resource-name">Practice Problems</span>
-                        <span class="resource-type">PDF</span>
+        <div class="content">
+            <!-- MATH SECTION -->
+            <div class="subject-box">
+                <div class="subject-header">
+                    <span class="icon">📐</span>
+                    <h2>Mathematics</h2>
+                </div>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="math/exam1.pdf" class="file-link" target="_blank">
+                            📄 Math Exam 1
+                        </a>
                     </li>
-                    <li class="resource-item">
-                        <span class="resource-name">Formula Sheet</span>
-                        <span class="resource-type">PDF</span>
+                    <li class="file-item">
+                        <a href="math/exam2.pdf" class="file-link" target="_blank">
+                            📄 Math Exam 2
+                        </a>
+                    </li>
+                    <li class="file-item">
+                        <a href="math/formulas.pdf" class="file-link" target="_blank">
+                            📄 Formula Sheet
+                        </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Physics Section -->
-            <div class="subject-card">
-                <div class="subject-icon">⚛️</div>
-                <h2 class="subject-title">Physics</h2>
-                <ul class="resources-list" id="physics-resources">
-                    <li class="resource-item">
-                        <span class="resource-name">Sample Exam 2024</span>
-                        <span class="resource-type">PDF</span>
+            <!-- PHYSICS SECTION -->
+            <div class="subject-box">
+                <div class="subject-header">
+                    <span class="icon">⚛️</span>
+                    <h2>Physics</h2>
+                </div>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <a href="physics/exam1.pdf" class="file-link" target="_blank">
+                            📄 Physics Exam 1
+                        </a>
                     </li>
-                    <li class="resource-item">
-                        <span class="resource-name">Lab Reports Guide</span>
-                        <span class="resource-type">PDF</span>
+                    <li class="file-item">
+                        <a href="physics/exam2.pdf" class="file-link" target="_blank">
+                            📄 Physics Exam 2
+                        </a>
                     </li>
-                    <li class="resource-item">
-                        <span class="resource-name">Constants Reference</span>
-                        <span class="resource-type">PDF</span>
+                    <li class="file-item">
+                        <a href="physics/constants.pdf" class="file-link" target="_blank">
+                            📄 Constants Reference
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="instructions">
-            <h2>📝 How to Add Your Documents</h2>
-            
-            <div class="step">
-                <span class="step-number">1</span>
-                <strong>Create GitHub Repository:</strong> Go to GitHub.com and create a new repository named "academic-resources" (or any name you prefer). Make sure it's set to PUBLIC.
-            </div>
+            <h3>🚀 How to Set Up Your Website</h3>
+            <ol>
+                <li><strong>Create GitHub Account:</strong> Go to <a href="https://github.com" target="_blank">github.com</a> and sign up</li>
+                
+                <li><strong>Create New Repository:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Click "New" button</li>
+                        <li>Name: "my-resources" (or any name)</li>
+                        <li>Select "Public"</li>
+                        <li>Check "Add a README file"</li>
+                        <li>Click "Create repository"</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Create Folders:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Click "Add file" → "Create new file"</li>
+                        <li>Type: <code>math/placeholder.txt</code></li>
+                        <li>Write anything inside and click "Commit"</li>
+                        <li>Repeat for: <code>physics/placeholder.txt</code></li>
+                    </ul>
+                </li>
+                
+                <li><strong>Upload This HTML File:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Save this page as "index.html"</li>
+                        <li>Go back to main repository page</li>
+                        <li>Click "Add file" → "Upload files"</li>
+                        <li>Upload index.html</li>
+                        <li>Click "Commit changes"</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Upload Your PDF Files:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Click on "math" folder</li>
+                        <li>Click "Add file" → "Upload files"</li>
+                        <li>Upload your math PDFs</li>
+                        <li>Click "Commit changes"</li>
+                        <li>Repeat for "physics" folder</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Edit File Names in HTML:</strong>
+                    <div class="code-box">
+                        <p>Find this in the HTML:</p>
+                        <code>&lt;a href="math/exam1.pdf" class="file-link" target="_blank"&gt;</code>
+                        <p style="margin-top: 10px;">Change "exam1.pdf" to YOUR actual file name</p>
+                    </div>
+                </li>
+                
+                <li><strong>Enable GitHub Pages:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Go to "Settings" tab</li>
+                        <li>Click "Pages" in left menu</li>
+                        <li>Under "Branch", select "main"</li>
+                        <li>Click "Save"</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Visit Your Website:</strong>
+                    <p style="margin-top: 10px;">After 2-3 minutes, go to:<br>
+                    <code>https://YOUR-USERNAME.github.io/REPOSITORY-NAME/</code></p>
+                </li>
+            </ol>
 
-            <div class="step">
-                <span class="step-number">2</span>
-                <strong>Upload This HTML File:</strong> Save this page as "index.html" and upload it to your repository's root folder.
-            </div>
-
-            <div class="step">
-                <span class="step-number">3</span>
-                <strong>Create Folders:</strong> In your repository, create two folders: "math" and "physics"
-            </div>
-
-            <div class="step">
-                <span class="step-number">4</span>
-                <strong>Upload PDFs:</strong> Upload your PDF files into the respective folders (math PDFs in "math" folder, physics PDFs in "physics" folder)
-            </div>
-
-            <div class="step">
-                <span class="step-number">5</span>
-                <strong>Enable GitHub Pages:</strong> 
-                <ul style="margin-top: 10px; margin-left: 40px;">
-                    <li>Go to your repository Settings</li>
-                    <li>Scroll to "Pages" section</li>
-                    <li>Under "Source", select "main" branch</li>
-                    <li>Click Save</li>
-                </ul>
-            </div>
-
-            <div class="step">
-                <span class="step-number">6</span>
-                <strong>Update Links:</strong> Edit the index.html file and replace the sample items with your actual files. For each PDF, add:
-                <pre style="background: #fff; padding: 10px; margin-top: 10px; border-radius: 5px; overflow-x: auto;"><code>&lt;li class="resource-item"&gt;
-    &lt;a href="math/your-file-name.pdf" download style="text-decoration: none; color: inherit; display: flex; justify-content: space-between; width: 100%;"&gt;
-        &lt;span class="resource-name"&gt;Your File Title&lt;/span&gt;
-        &lt;span class="resource-type"&gt;PDF&lt;/span&gt;
+            <h3 style="margin-top: 30px;">📝 Example: Adding Your Own File</h3>
+            <p>If you have a file called <strong>DS_Math_2024.pdf</strong> in the math folder:</p>
+            <div class="code-box">
+<code>&lt;li class="file-item"&gt;
+    &lt;a href="math/DS_Math_2024.pdf" class="file-link" target="_blank"&gt;
+        📄 Math DS 2024
     &lt;/a&gt;
-&lt;/li&gt;</code></pre>
-            </div>
-
-            <div class="step">
-                <span class="step-number">7</span>
-                <strong>Access Your Site:</strong> Your website will be available at: https://YOUR-USERNAME.github.io/REPOSITORY-NAME/
+&lt;/li&gt;</code>
             </div>
         </div>
-
-        <footer>
-            <p>Made with ❤️ for students | Last updated: 2026</p>
-        </footer>
     </div>
 </body>
 </html>
